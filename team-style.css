@@ -1,0 +1,325 @@
+:root 
+
+/* Dark Mode + RTL كامل لصفحة الفريق */
+body.dark-mode {
+    --bg-color: #0f172a !important;
+    --card-bg: #1e293b !important;
+    --text-main: #f1f5f9 !important;
+    --text-muted: #94a3b8 !important;
+    --primary: #60a5fa !important;
+    --accent: #fbbf24 !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .card {
+    background: var(--card-bg) !important;
+    border-color: rgba(148, 163, 184, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .avatar-wrapper {
+    background: conic-gradient(from 130deg, #60a5fa, #fbbf24, #22d3ee, #60a5fa) !important;
+}
+
+body.dark-mode header h1 {
+    color: var(--primary) !important;
+}
+
+body.dark-mode header p {
+    color: var(--text-muted) !important;
+}
+
+body.dark-mode .member-name-ar,
+body.dark-mode .member-name-en {
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .info-label {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .info-value {
+    color: var(--text-main) !important;
+}
+
+body.dark-mode .role {
+    color: var(--text-muted) !important;
+}
+
+/* RTL Support */
+body.arabic {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif !important;
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+body.arabic .team-container {
+    direction: rtl;
+}
+
+body.arabic .info-row {
+    text-align: right;
+}
+
+body.arabic .badge {
+    right: 1rem;
+    left: auto;
+}
+
+
+  /* Top Navigation لصفحة الفريق */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.top-nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.2s ease;
+}
+
+.top-nav a:hover {
+    background: var(--accent);
+    color: #1f2933;
+    transform: translateY(-1px);
+}
+
+/* عدّل الـ body عشان يعطي مسافة للـ Navigation */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #e5edff 0, #f4f5fb 45%, #f9fafb 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding-top: 80px; /* مسافة للـ Navigation الثابت */
+}
+
+
+ {
+    --bg-color: #f4f5fb;
+    --card-bg: #ffffff;
+    --primary: #234f9b;
+    --accent: #f0b90b;
+    --text-main: #1f2933;
+    --text-muted: #6b7280;
+    --border-radius-lg: 18px;
+    --border-radius-sm: 10px;
+    --shadow-soft: 0 12px 25px rgba(15, 23, 42, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #e5edff 0, #f4f5fb 45%, #f9fafb 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 120px 1rem 1.5rem;
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--primary);
+    letter-spacing: 0.03em;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.team-container {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 1.4rem 1.4rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(35, 79, 155, 0.09), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.18);
+    border-color: rgba(35, 79, 155, 0.35);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 1rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(35, 79, 155, 0.07);
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.avatar-wrapper {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    padding: 3px;
+    background: conic-gradient(from 130deg, #234f9b, #f0b90b, #38bdf8, #234f9b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.85rem;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #f9fafb;
+    object-fit: cover;
+    background-color: #e5e7eb;
+}
+
+.member-name-ar {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+    direction: rtl;
+    text-align: center;
+}
+
+.member-name-en {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+}
+
+.role {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.info-group {
+    width: 100%;
+    margin-top: 0.2rem;
+}
+
+.info-row {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #9ca3af;
+}
+
+.info-value {
+    word-break: break-all;
+    direction: ltr;
+}
+
+.info-value.arabic {
+    direction: rtl;
+}
+
+.id-pill {
+    display: inline-block;
+    margin-top: 0.15rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(240, 185, 11, 0.07);
+    color: #92400e;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.footer-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding-top: 1.8rem;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .team-container {
+        padding: 0 0.75rem 2rem;
+    }
+}
